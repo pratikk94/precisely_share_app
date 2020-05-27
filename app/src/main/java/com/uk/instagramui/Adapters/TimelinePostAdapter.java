@@ -1,15 +1,18 @@
 package com.uk.instagramui.Adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
+import com.uk.instagramui.Fragments.HomeFragment;
 import com.uk.instagramui.Model.TimelinePost;
 import com.uk.instagramui.R;
 
@@ -51,7 +54,11 @@ public class TimelinePostAdapter extends RecyclerView.Adapter<TimelinePostAdapte
 		postViewHolder.tvLikes.setText(post.getLikes() + " likes");
 		postViewHolder.tvCaption.setText(post.getCaption());
 		postViewHolder.tvDate.setText(post.getDate());
-		
+		if(i==getItemCount()-1){
+			Log.d("PaginationCalled","YESS");
+			HomeFragment hf = HomeFragment.getInstance();
+			hf.getData(getItemCount()/10);
+		}
 	}
 	
 	@Override

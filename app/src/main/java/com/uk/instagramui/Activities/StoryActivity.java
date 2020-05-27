@@ -1,14 +1,13 @@
 package com.uk.instagramui.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-import com.uk.instagramui.Model.Post;
-import com.uk.instagramui.Model.Story;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.uk.instagramui.R;
 
 import java.util.ArrayList;
